@@ -29,20 +29,8 @@ topkek.windows.misc = {}
 
 topkek.misc = {}
 
-local success, gui = pcall(function()
-	return grab(5519886843)
-end)
-
-if success and gui then
-	task.wait()
-	
-	topkek.gui.Parent = game:GetService("Players").LocalPlayer.PlayerGui
-else
-	warn("Failed to load asset with ID 5519886843")
-	if not success then
-		warn("Error: ", gui)
-	end
-end
+topkek.gui = grab(5519886843)[1]	
+topkek.gui.Parent = game:GetService("Players").LocalPlayer.PlayerGui
 
 topkek.center = topkek.gui.Main
 topkek.holder = topkek.center.Holder
